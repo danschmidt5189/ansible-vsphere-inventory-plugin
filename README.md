@@ -6,6 +6,7 @@ Yet another vSphere inventory plugin. This one offers features I've not seen els
 - Pulls and caches all data from vSphere before applying filters, extractions, groupings, etc.
   - Tested with small inventories (~250 VM). Memory/performance will suffer with larger ones.
   - The same cache may be used to generate different views of inventory for the same vSphere connection.
+- Tunnel vSphere connection through a SOCKS5 proxy.
 
 Expressions can reference (and ultimately modify) the following values for each host:
 
@@ -15,7 +16,19 @@ Expressions can reference (and ultimately modify) the following values for each 
 - `groups`: Set of groups for the host.
 
 ```yml
+# Note: Everything in the file can be set via the environment!
+
+# Declare the plugin type
 plugin: vsphere
+
+# Connection
+hostname: ...
+username: ...
+password: ...
+
+# Optional SOCKS5 Proxy params
+proxy_host: ...
+proxy_port: ...
 
 # Caching
 cache: True
