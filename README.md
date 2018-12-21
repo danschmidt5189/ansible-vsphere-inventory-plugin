@@ -8,12 +8,18 @@ Yet another vSphere inventory plugin. This one offers features I've not seen els
   - The same cache may be used to generate different views of inventory for the same vSphere connection.
 - Tunnel vSphere connection through a SOCKS5 proxy.
 
+## Extracting Data
+
 Expressions can reference (and ultimately modify) the following values for each host:
 
 - `name`: The name of the virtual machine.
 - `props`: Raw host properties extracted via the API call. See _execute_search() for schema.
 - `hostvars`: Dictionary of hostvars for the host.
 - `groups`: Set of groups for the host.
+
+## Config Example
+
+See the [in-code documentation](https://github.com/danschmidt5189/ansible-vsphere-inventory-plugin/blob/master/vsphere.py#L30) for the "real" config.
 
 ```yml
 # Note: Everything in the file can be set via the environment!
